@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{61315C89-B5F9-4463-BCE6-7CE0EC5E28C7}</ProjectGuid>
+    <ProjectGuid>{8806BC32-537A-4E21-AF40-096B21A2608D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ReflectionDemo</RootNamespace>
-    <AssemblyName>ReflectionDemo</AssemblyName>
+    <RootNamespace>MiddleLib</RootNamespace>
+    <AssemblyName>MiddleLib</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BlackBox\BlackBox.csproj">
-      <Project>{b689630c-6549-41a4-8c93-9b3141589959}</Project>
-      <Name>BlackBox</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
