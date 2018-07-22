@@ -2,6 +2,6 @@
 
 This example shows an external class library in a completely separate project DLL, accessing all of the main app methods and variables.
 
-ReflectionDemo is the main app.
+[ReflectionDemo](https://github.com/gojimmypi/ReflectionDemo/tree/master/ReflectionDemo) is the main app.
 
-BlackBox is the exernal DLL class library.
+[BlackBox](https://github.com/gojimmypi/ReflectionDemo/tree/master/BlackBox) is the external DLL class library.
