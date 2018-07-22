@@ -6,6 +6,7 @@ namespace myProgram
 {
     class Program
     {
+        // Note zero references to methods and variables
         public string myData = "This is the public string MyData";
         private string myOtherPrivateData = "This is the PRIVATE string myOtherPrivateData";
 
@@ -20,6 +21,8 @@ namespace myProgram
 
         static void Main(string[] args)
         {
+            // simply instantiate the blackbox demo to allow it
+            // acccess to our local, private methods and variables!
             BlackBox bb = new BlackBoxDemo.BlackBox();
             Console.WriteLine("Done!");
         }
