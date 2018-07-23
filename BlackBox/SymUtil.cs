@@ -7,12 +7,14 @@ using System.Runtime.InteropServices;
 
 // note there's a manual inclusion of the ISymwrapper.dll from C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1
 // note also that this is an osolete library, and appears to be 32bit (so this app is compiled in 32bit) TODO: 64bit?
-// 
+// see https://docs.microsoft.com/en-us/dotnet/framework/whats-new/obsolete-members#isymwrapper
+//
 // from https://stackoverflow.com/questions/6166767/retrieve-local-variable-name-from-pdb-files
 //
 // see https://docs.microsoft.com/en-us/dotnet/framework/whats-new/obsolete-members#isymwrapper
 //     https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.symbolstore.symbinder.getreader?view=netframework-4.7.2#System_Diagnostics_SymbolStore_SymBinder_GetReader_System_IntPtr_System_String_System_String_
-
+//
+// also: https://blogs.msdn.microsoft.com/haibo_luo/2005/09/02/no-localvariableinfo-name/
 
 namespace BlackBoxDemo { 
 

@@ -6,6 +6,6 @@ This example shows an external class library in a completely separate project DL
 
 [BlackBox](https://github.com/gojimmypi/ReflectionDemo/tree/master/BlackBox) is the external DLL class library.
 
-Latest update includes ability to view source code programmatically, as well as view stackframe info for each method.
+Latest update includes ability to view source code programmatically, as well as view stackframe info for each method. Thanks [@ITMayWorkDev](https://twitter.com/ITMayWorkDev/status/1020994049799405568)
 
 Unresolved: peeking at local variable values.

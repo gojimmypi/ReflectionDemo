@@ -10,6 +10,10 @@ using System.Runtime.InteropServices;
 
 namespace BlackBoxDemo
 {
+    // See also https://msdn.microsoft.com/en-us/library/system.reflection.memberinfo(v=vs.110).aspx
+    //          https://www.tutorialspoint.com/csharp/csharp_reflection.htm
+    //
+
     public class BlackBox
     {
         private readonly string MainExecutableName = System.Reflection.Assembly.GetEntryAssembly().Location; // or  AppContext.BaseDirectory + AppDomain.CurrentDomain.FriendlyName; 
@@ -59,10 +63,10 @@ namespace BlackBoxDemo
             Console.WriteLine(new String('-', 60));
         }
 
-        public static void GetLocalVariables(Assembly ass, MethodInfo m)
+        public static void GetLocalVariables(Assembly asm, MethodInfo m)
         {
             // Assembly ass = Assembly.GetExecutingAssembly();
-            ISymbolReader symreader = SymUtil.GetSymbolReaderForFile(ass.Location, null);
+            ISymbolReader symreader = SymUtil.GetSymbolReaderForFile(asm.Location, null);
 
             // MethodInfo m = ass.GetType("PdbTest.TestClass").GetMethod("GetStringRepresentation");
             ISymbolMethod met = symreader.GetMethod(new SymbolToken(m.MetadataToken));
@@ -103,7 +107,8 @@ namespace BlackBoxDemo
             Console.WriteLine();
 
             IEnumerable<System.Reflection.TypeInfo> assemblyType = Assembly.LoadFile(MainExecutableName).DefinedTypes;
-
+                    
+            // see https://stackoverflow.com/questions/18362368/loading-dlls-at-runtime-in-c-sharp
             var DLL = Assembly.LoadFile(MainExecutableName);
 
             foreach (System.Reflection.TypeInfo assemblyItem in assemblyType)
@@ -125,6 +130,7 @@ namespace BlackBoxDemo
                         Console.WriteLine();
                         if (mi.Name != "Main") // we'd likely run into a recursion problem by re-invoking Main()
                         {
+                            // see https://stackoverflow.com/questions/2202381/reflection-how-to-invoke-method-with-parameters
                             Console.WriteLine("Invoking: " + mi.Name);
                             mi.Invoke(c, new object[] { });
                         }
@@ -134,6 +140,7 @@ namespace BlackBoxDemo
                 // show all the main application fields
                 foreach (System.Reflection.FieldInfo fi in assemblyItem.DeclaredFields)
                 {
+                    // See https://stackoverflow.com/questions/43251571/c-sharp-methodinfo-invoke
                     Console.WriteLine("Found " + fi.Attributes + " variable: " + fi.Name + " = " + fi.GetValue(c));
                 }
             }
