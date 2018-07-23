@@ -65,9 +65,17 @@ namespace BlackBoxDemo {
 
             // Now open an Importer on the given filename. We'll end up passing this importer 
             // straight through to the Binder.
-            object objImporter;
+            object objImporter = null;
             IMetaDataDispenser dispenser = (IMetaDataDispenser)objDispenser;
-            dispenser.OpenScope(pathModule, 0, ref importerIID, out objImporter);
+            try
+            {
+                dispenser.OpenScope(pathModule, 0, ref importerIID, out objImporter);
+            }
+            catch
+            {
+                Console.WriteLine(" ERROR: Failed dispenser.OpenScope() - perhaps this app needs to be compiled in x86?");
+                return null;
+            }
 
             IntPtr importerPtr = IntPtr.Zero;
             ISymbolReader reader;
