@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 //
 // also: https://blogs.msdn.microsoft.com/haibo_luo/2005/09/02/no-localvariableinfo-name/
 
-namespace BlackBoxDemo { 
+namespace BlackBox { 
 
 
     // Encapsulate a set of helper classes to get a symbol reader from a file.

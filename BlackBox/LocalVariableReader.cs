@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Diagnostics.SymbolStore;
 
-namespace BlackBoxDemo
+namespace BlackBox
 {
     public class LocalVariableNameReader
     {

@@ -9,3 +9,5 @@ This example shows an external class library in a completely separate project DL
 Latest update includes ability to view source code programmatically, as well as view stackframe info for each method. Thanks [@ITMayWorkDev](https://twitter.com/ITMayWorkDev/status/1020994049799405568)
 
 Unresolved: peeking at local variable values.
+
+[Getting Stack Local Variables](https://social.msdn.microsoft.com/Forums/vstudio/en-US/02962055-3e07-4d93-83ea-6973154d9724/getting-stack-local-variables?forum=netfxbcl)

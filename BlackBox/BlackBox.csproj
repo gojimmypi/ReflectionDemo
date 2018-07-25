@@ -70,9 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlackBoxExternal.cs" />
+    <Compile Include="AppConfigKeyViewer.cs" />
+    <Compile Include="BlackBoxPeeker.cs" />
     <Compile Include="LocalVariableReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StackPeeker.cs" />
     <Compile Include="SymUtil.cs" />
   </ItemGroup>
   <ItemGroup>
