@@ -26,7 +26,7 @@ namespace BlackBox
 
             if (symreader == null)
             {
-                Console.WriteLine(" ERROR: no symreader was created. Aborting...");
+                Console.WriteLine(" ERROR: no symreader was created. Aborting GetLocalVariables...");
                 return;
             }
             ISymbolMethod symMethod = symreader.GetMethod(new SymbolToken(m.MetadataToken));

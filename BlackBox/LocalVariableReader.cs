@@ -31,9 +31,17 @@ namespace BlackBox
 
         public LocalVariableNameReader(MethodInfo m)
         {
-            ISymbolReader symReader = SymUtil.GetSymbolReaderForFile(m.DeclaringType.Assembly.Location, null);
-            ISymbolMethod met = symReader.GetMethod(new SymbolToken(m.MetadataToken));
-            VisitLocals(met.RootScope);
+            try
+            {
+                ISymbolReader symReader = SymUtil.GetSymbolReaderForFile(m.DeclaringType.Assembly.Location, null);
+                ISymbolMethod met = symReader.GetMethod(new SymbolToken(m.MetadataToken));
+                VisitLocals(met.RootScope);
+            }
+            catch
+            {
+                Console.WriteLine(" ERROR: Failed LocalVariableNameReader() - perhaps this app needs to be compiled in x86?");
+                return;
+            }
         }
 
         void VisitLocals(ISymbolScope iSymbolScope)

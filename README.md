@@ -11,3 +11,8 @@ Latest update includes ability to view source code programmatically, as well as 
 Unresolved: peeking at local variable values.
 
 [Getting Stack Local Variables](https://social.msdn.microsoft.com/Forums/vstudio/en-US/02962055-3e07-4d93-83ea-6973154d9724/getting-stack-local-variables?forum=netfxbcl)
+
+Note that due to an obsolete DLL library being used, this code needs to be compiled in x86 for full functionality. Specifically in SymUtil.cs:
+
+C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\ISymWrapper.dll
+
